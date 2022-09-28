@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо реализовать четыре функции, каждая функция должна принимать по два
@@ -28,10 +30,54 @@
 
 Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    /**
+     * Считаем сумму чисел, переданных в качестве аргументов функции.
+     * @param {number} a - первое число.
+     * @param {number} b - второе число.
+     * @returns {number} - сумма чисел.
+     */
+    function sumNumbers(a, b) {
+      return a + b;
+    }
+    /**
+     * Считаем разность чисел, переданных в качестве аргументов функции.
+     * @param {number} a - первое число.
+     * @param {number} b - второе число.
+     * @returns {number} - разность чисел.
+     */
+    function diffNumbers(a, b) {
+      if (a > b) {
+        return a - b;
+      }
+      return b - a;
+    }
+    /**
+     * Считаем произведение чисел, переданных в качестве аргументов функции.
+     * @param {number} b - первое число.
+     * @param {number} b - второе число.
+     * @returns {number} - произведение чисел.
+     */
+    function multNumbers(a, b) {
+      return a * b;
+    }
+    /**
+     * Считаем частное от деления чисел, переданных в качестве аргументов функции.
+     * @param {number} a - первое число.
+     * @param {number} b - второе число.
+     * @returns {number} - частное от деления чисел.
+     */
+    function divNumbers(a, b) {
+      return a / b;
+    }
+    console.log(sumNumbers(2, 5))
+    console.log(diffNumbers(2, 5))
+    console.log(multNumbers(2, 5))
+    console.log(divNumbers(2, 5))
+
+  </script>
 </body>
+
 </html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
@@ -29,10 +31,99 @@ Infinity делать не нужно, однако, в случае если б
 
 Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    /**
+       * Считаем сумму чисел, переданных в качестве аргументов функции.
+       * @param {number} - первое число.
+       * @param {number} - второе число.
+       * @returns {number} - сумма чисел.
+       */
+    function sumNumbers(a, b) {
+      return a + b;
+    }
+
+    /**
+     * Считаем разность чисел, переданных в качестве аргументов функции.
+     * @param {number} - первое число.
+     * @param {number} - второе число.
+     * @returns {number} - разность чисел.
+     */
+    function diffNumbers(a, b) {
+      if (a > b) {
+        return a - b;
+      }
+      return b - a;
+    }
+
+    /**
+     * Считаем произведение чисел, переданных в качестве аргументов функции.
+     * @param {number} - первое число.
+     * @param {number} - второе число.
+     * @returns {number} - произведение чисел.
+     */
+    function multNumbers(a, b) {
+      return a * b;
+    }
+
+    /**
+     * Считаем частное от деления чисел, переданных в качестве аргументов функции.
+     * @param {number} - первое число.
+     * @param {number} - второе число.
+     * @returns {number} - частное от деления чисел.
+     */
+    function divNumbers(a, b) {
+      return a / b;
+    }
+
+    /**
+     * Функция принимает в качестве аргументов два числа и предоставляет
+     * возможность выбора арифметической операции с этими числами.
+     * @param {number} arg1 - первое число.
+     * @param {number} arg2 - второе число.
+     * @param {string} operation - выбранное арифметическое действие.
+     * @returns {number} - результат вычисления в зависимости от выбранной операции.
+     */
+    function mathOperation(arg1, arg2, operation) {
+      if (operation == '+') {
+        return arg1 + arg2;
+      }
+      if (operation == '-') {
+        return Math.abs(arg1 - arg2);
+      }
+      if (operation == '*') {
+        return arg1 * arg2;
+      }
+      if (operation == ':') {
+        return arg1 + arg2;
+      }
+      return NaN
+    }
+
+    /**
+     * Функция принимает в качестве аргументов два числа и предоставляет
+     * возможность выбора арифметической операции с этими числами.
+     * @param {number} arg1 - первое число.
+     * @param {number} arg2 - второе число.
+     * @param {string} operation - выбранное арифметическое действие.
+     * @returns {number} - результат вычисления в зависимости от выбранной операции.
+     */
+    function mathOperationNew(arg1, arg2, operation) {
+      switch (operation) {
+        case '+': return sumNumbers(arg1, arg2);
+        case '-': return diffNumbers(arg1, arg2);
+        case '*': return multNumbers(arg1, arg2);
+        case '/': return divNumbers(arg1, arg2);
+        default: return NaN;
+      }
+    }
+    console.log(mathOperation(3, 6, "+"));
+    console.log(mathOperation(5, 3, "*!"));
+    console.log(mathOperationNew(7, 6, "*"));
+    console.log(mathOperationNew(4, 3, "*(("));
+
+  </script>
 </body>
+
 </html>
