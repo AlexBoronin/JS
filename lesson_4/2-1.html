@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Необязательное задание, но желательно сделать.
+
+Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
+Необходимо создать функцию-конструктор/класс для поста в социальной сети.
+Названия: `PostES5` для es5 стиля и `PostES6` для es6 стиля.
+Пост должен хранить:
+1. Автора поста (имени достаточно).
+2. Текст поста.
+3. Дату и время последнего изменения поста.
+Данные автора поста и текст поста необходимо передавать при создании
+экземпляра объекта.
+Каждому экземпляру объекта должен быть доступен метод `edit`, который будет
+менять текст поста.
+
+---
+Подсказки:
+1. Задание сложное, советую делать по аналогии с примером на онлайн-занятии.
+2. Обратите внимание что пост хранит "дату и время последнего изменения
+поста", это значит что если пост кто-то изменит (например вызовет какой-то
+метод, который изменит что-то в посте), дата и время последнего изменения
+поста также должна измениться.
+3. Выполняйте все по порядку, не стоит пытаться сделать все сразу, иначе можно
+что-нибудь пропустить.
+4. Если непонятно условие - задайте вопрос.
+-->
+  <script>
+    "use strict";
+
+    function PostES5(author, post_txt) {
+      this.author = author;
+      this.post_txt = post_txt;
+      this.change_date = new Date().toLocaleString();
+    }
+
+    PostES5.prototype.change_txt = function (post_txt) {
+      this.post_txt = post_txt;
+      this.change_date = new Date().toLocaleString();
+    }
+    const postTxtES5 = new PostES5('Mike', "It's a problem");
+    console.log(postTxtES5);
+    postTxtES5.change_txt('No problem!');
+    console.log(postTxtES5);
+
+    class PostES6 {
+      constructor(author, post_txt) {
+        this.author = author;
+        this.post_txt = post_txt;
+        this.change_date = new Date().toLocaleString();
+      }
+      change_txt(post_txt) {
+        this.post_txt = post_txt;
+        this.change_date = new Date().toLocaleString();
+      }
+    }
+    const postTxtES6 = new PostES6('Mike', "It's a problem");
+    console.log(postTxtES6);
+    postTxtES6.change_txt('No problem, Mike!');
+    console.log(postTxtES6);
+  </script>
+</body>
+
+</html>
